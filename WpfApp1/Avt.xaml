@@ -10,8 +10,8 @@
 
     <Grid>
         <Label Content="Введите код подразделения" Margin="316,43,316,382"/>
-        <TextBox  x:Name="Podrapdel" HorizontalAlignment="Center" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462" Height="27"/>
-        <Button Content="Войти" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Height="27" Width="136" Click="Button_Click"/>
-        <TextBlock  x:Name="Podrapdel_Copy" HorizontalAlignment="Center" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462" Height="27" Text="Код подразделения" MouseLeftButtonDown="Podrapdel_Copy_MouseLeftButtonDown"/>
+        <TextBox Style="{DynamicResource TextBoxStyle1}" x:Name="Podrapdel" HorizontalAlignment="Center" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462" Height="27"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Content="Войти" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Height="27" Width="136" Click="Button_Click"/>
+        <TextBlock Style="{DynamicResource TextBlockStyle1}" x:Name="Podrapdel_Copy" HorizontalAlignment="Left" Margin="176,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="26" Text="Код подразделения" MouseLeftButtonDown="Podrapdel_Copy_MouseLeftButtonDown"/>
     </Grid>
 </Page>

@@ -21,26 +21,31 @@ namespace WpfApp1
     public partial class Avt : Page
     {
         public Frame frame1;
+        List<Kod_podrazdel> kod_p = new List<Kod_podrazdel>();
 
         public Avt(Frame frame)
         {
             InitializeComponent();
-            frame1 = frame;         
-            
+            frame1 = frame;
+            kod_p = PEEntities2.GetContext().Kod_podrazdel.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string podrazdel = "123456";
-            if (Podrapdel.Text == podrazdel)
+            for (int i = 0; i < kod_p.Count; i++)
             {
-                frame1.Navigate(new Glavn(frame1));
-            }
-            else
-            {
-                MessageBox.Show("Код подразделения не верен", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                if (Podrapdel.Text == kod_p[i].Kodpodrazdel)
+                {
+                    frame1.Navigate(new Glavn(frame1));
+                }
+                else
+                {
+                    MessageBox.Show("Код подразделения не верен", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+                }
             }
+
+            
         }
 
         private void Podrapdel_Copy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

@@ -9,13 +9,26 @@
       Title="Glavn">
 
     <Grid>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="5,43,5,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+        <StackPanel Width="800" Margin="5,0,-5,0" Height="40" VerticalAlignment="Top">
+            <TextBox x:Name="Poisk" Width="300" Height="40" Margin="-500,0,0,0" TextChanged="Poisk_TextChanged" />
+            <Button x:Name="add" Content="Добавить" Width="60" Height="40" Margin="650,-35,0,0" Click="add_Click" Style="{DynamicResource ButtonStyle1}"/>
+        </StackPanel>
+        <ListView d:ItemsSource="{Binding People}" Margin="5,43,5,0" x:Name="listView1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                        <TextBlock Text="{Binding FirstName}" Margin="10,0,0,0"/>
+                        <TextBlock Text="{Binding Surname}" Margin="100,0,0,0"/>
+                        <TextBlock Text ="{Binding date_bir}"  Margin="200,0,0,0" />
+                        <TextBlock Text="{Binding Pol.pol1}" Margin="400,0,0,0"/>
+                    </Grid>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
         </ListView>
+
 
     </Grid>
 </Page>
